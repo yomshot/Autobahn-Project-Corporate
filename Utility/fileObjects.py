@@ -2,7 +2,7 @@ import json
 
 class MyLocator():
 
-    def url(self):
+    def url(self): # this method will access url.json
         try:
             path = "C:\\Users\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\url.json"
 
@@ -12,7 +12,7 @@ class MyLocator():
         except:
             return print('JSON File not existing')
 
-    def login(self):
+    def login(self): # this method will access loginPage.json
         try:
             path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\loginPage.json"
 
@@ -22,7 +22,7 @@ class MyLocator():
         except:
             return print('JSON File not existing')
 
-    def loginCredential(self):
+    def loginCredential(self): # this method will access loginCredential.json
         try:
             path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\" \
                    "loginCredential.json"
@@ -33,7 +33,7 @@ class MyLocator():
         except:
             return print('JSON File not existing')
 
-    def otp(self):
+    def otp(self): # this method will access otp.json
         try:
             path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\otp.json"
 

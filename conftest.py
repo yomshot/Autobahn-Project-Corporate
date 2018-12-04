@@ -6,10 +6,13 @@ import time
 @pytest.fixture(scope="class")
 def setup(request):
 
+    # instance object for MyLocator class
     exe = MyLocator()
 
+    # assign url
     link = exe.url()
 
+    # get the url from url.json
     url = link['url']['corporate'][0]
     path = 'D:\\chromedriver.exe'
 

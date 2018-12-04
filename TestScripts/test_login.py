@@ -11,17 +11,16 @@ class TestLoginForm:
         my = Login()
         wait = 4
 
-        run.find_elements(my.usernameBy, my.usernameLoc)
-        run.find_element_and_input(my.usernameBy, my.usernameLoc, wait, my.username)
+        run.find_elements(my.usernameBy, my.usernameLoc) # find username field
+        run.find_element_and_input(my.usernameBy, my.usernameLoc, wait, my.username) # enter valid username
 
-        run.find_elements(my.passwordBy, my.passwordLoc)
-        run.find_element_and_input(my.passwordBy, my.passwordLoc, wait, my.password)
+        run.find_elements(my.passwordBy, my.passwordLoc) # find password field
+        run.find_element_and_input(my.passwordBy, my.passwordLoc, wait, my.password) # enter valid password
 
-        run.click_element(my.loginButtonBy, my.loginButtonLoc)
+        run.click_element(my.loginButtonBy, my.loginButtonLoc) # click button to submit
 
-        run.find_elements(my.otpBy, my.otpLoc)
-        run.find_element_and_input(my.otpBy, my.otpLoc, wait, my.otpCode)
+        run.find_elements(my.otpBy, my.otpLoc) # find otp field
+        run.find_element_and_input(my.otpBy, my.otpLoc, wait, my.otpCode) # enter otp by default
 
-        run.click_element(my.otpButtonBy, my.otpButtonLoc)
-        ###
+        run.click_element(my.otpButtonBy, my.otpButtonLoc) # click otp submit button
 
