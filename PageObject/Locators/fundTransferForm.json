@@ -1,0 +1,69 @@
+{
+  "reuseButton":{
+    "fundTransfer":{
+      "locator":"//span[text()='Fund Transfer']",
+      "by":"xpath"
+    },
+    "newTransaction":{
+      "locator":"//a[contains(text(), 'New Transaction')]",
+      "by":"xpath"
+    },
+    "submitToConfirmation":{
+      "locator":"//button[text()='Next']",
+      "by":"xpath"
+    },
+    "submitToSummary":{
+      "locator":"//button[text()='Submit'",
+      "by":"xpath"
+    }
+  },
+  "reuseField":{
+    "sourceAccount":{
+      "locator":"//small[text()='Select the Unionbank account you want to transfer from.']",
+      "by":"xpath"
+    },
+    "receiverAccount":{
+      "locator":"//input[@name='receiver_account_number']",
+      "by":"xpath"
+    },
+    "amount":{
+      "locator":"//input[@name='amount']",
+      "by":"xpath"
+    },
+    "remarks":{
+      "locator":"//input[@name='remarks']",
+      "by":"xpath"
+    }
+  },
+  "reuseBeneficiary":{
+    "beneficiaryName":{
+      "locator":"//input[@name='beneficiary_name']",
+      "by":"xpath"
+    },
+    "selectBank":{
+      "locator":"//span[text()='Select bank']",
+      "by":"xpath",
+      "myBank":{
+        "locator":"//span[text()='asia united bank']",
+        "by":"xpath"
+      }
+    }
+  },
+  "reusePurpose": {
+    "locator":"//span[text()='Select purpose']",
+    "by":"xpath",
+    "myPurpose":{
+      "locator":"//span[text()='COMPUTER AND INFORMATION SERVICES']",
+      "by":"xpath"
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

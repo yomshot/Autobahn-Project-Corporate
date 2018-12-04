@@ -12,6 +12,17 @@ class MyLocator():
         except:
             return print('JSON File not existing')
 
+    def landingComponent(self):
+        try:
+            path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\" \
+                   "landingComponent.json"
+
+            with open(path, encoding='utf-8') as s:
+                landingComponent = json.loads(s.read())
+            return landingComponent
+        except:
+            return print('JSON File not existing')
+
     def login(self): # this method will access loginPage.json
         try:
             path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\loginPage.json"
@@ -42,3 +53,21 @@ class MyLocator():
             return otp
         except:
             return print('JSON File not existing')
+
+    def fundTransferForm(self):
+        try:
+            path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\" \
+                   "fundTransferForm.json"
+
+            with open(path, encoding='utf-8') as s:
+                ft = json.loads(s.read())
+            return ft
+        except:
+            return print('JSON File not existing')
+
+
+
+
+
+
+

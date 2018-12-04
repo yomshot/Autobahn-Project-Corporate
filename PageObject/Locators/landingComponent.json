@@ -1,0 +1,18 @@
+{
+  "leftSideBar":{
+    "fundTransfer":{
+      "locator":"//span[text()='Fund Transfer']",
+      "by":"xpath"
+    },
+    "billsPayment":{
+      "locator":"//span[text()='Fund Transfer']",
+      "by":"xpath"
+    }
+  },
+  "topBar":{
+    "organization":{
+      "locator":"//span[@class='fs-13 font-weight-bold text-truncate']",
+      "by":"xpath"
+    }
+  }
+}

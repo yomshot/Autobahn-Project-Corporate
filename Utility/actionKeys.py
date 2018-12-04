@@ -30,8 +30,8 @@ class MakeAction(object):
         by = helper.method_by(by) # check the method of finding the location
         try:
             element = WebDriverWait(self.driver, wait).until(
-                EC.invisibility_of_element_located((by, locator))
-            ) # this is explicitly wait in selenium
+                EC.invisibility_of_element_located((by, locator)) # this is explicitly wait in selenium
+            )
             if element:
                 return True
         except TimeoutException as e:
@@ -42,8 +42,8 @@ class MakeAction(object):
         by = helper.method_by(by) # check the method of finding the location
         try:
             element = WebDriverWait(self.driver, wait).until(
-                EC.element_to_be_clickable((by, locator))
-            ) # this is explicitly wait in selenium
+                EC.element_to_be_clickable((by, locator)) # this is explicitly wait in selenium
+            )
             element.click()
             print('Click Element {0}'.format(locator))
             return True
@@ -55,8 +55,8 @@ class MakeAction(object):
         by = helper.method_by(by) # check the method of finding the location
         try:
             element = WebDriverWait(self.driver, int(wait)).until(
-                EC.visibility_of_element_located((by, locator))
-            ) # this is explicitly wait in selenium
+                EC.visibility_of_element_located((by, locator)) # this is explicitly wait in selenium
+            )
             print("Element " + locator + " Found")
             return element
         except TimeoutException:
