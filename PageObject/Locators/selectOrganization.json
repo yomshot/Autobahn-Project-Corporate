@@ -1,3 +1,6 @@
 {
-  "organization":"//span[@class='fs-13 font-weight-bold text-truncate']"
+  "organization":{
+    "locator":"//span[@class='fs-13 font-weight-bold text-truncate']",
+    "by":"xpath"
+  }
 }
