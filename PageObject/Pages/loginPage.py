@@ -25,3 +25,6 @@ class Login():
         self.otpLoc = otp['otpField']['locator']
         self.otpBy = otp['otpField']['by']
         self.otpCode = otp['otpField']['code']
+
+        self.otpButtonLoc = otp['otpButton']['locator']
+        self.otpButtonBy = otp['otpButton']['by']

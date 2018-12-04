@@ -22,5 +22,5 @@ class TestLoginForm:
         run.find_elements(my.otpBy, my.otpLoc)
         run.find_element_and_input(my.otpBy, my.otpLoc, wait, my.otpCode)
 
-        run.click_element(my.otpBy, my.otpLoc)
+        run.click_element(my.otpButtonBy, my.otpButtonLoc)
 
