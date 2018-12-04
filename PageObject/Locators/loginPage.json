@@ -1,0 +1,14 @@
+{
+  "usernameField":{
+    "locator":"//input[@name='username']",
+    "by":"xpath"
+  },
+  "passwordField":{
+    "locator":"//input[@name='password']",
+    "by":"xpath"
+  },
+  "submitButton":{
+    "locator":"//button[text()='Login']",
+    "by":"xpath"
+  }
+}

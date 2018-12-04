@@ -1,0 +1,12 @@
+{
+  "url":{
+    "corporate":[
+      "http://10.19.23.171:8080/autobahn-corporate-qat/login",
+      "http://10.19.23.171:8080/autobahn-corporate-dev/login"
+    ],
+    "backOffice":[
+      "http://10.19.23.171:8080/autobahn-bo-qat/login",
+      "http://10.19.23.171:8080/autobahn-bo-dev/login"
+    ]
+  }
+}

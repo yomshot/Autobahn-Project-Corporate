@@ -1,0 +1,11 @@
+{
+  "otpField":{
+    "locator":"//input[@name='code']",
+    "by":"xpath",
+    "code":"111111"
+  },
+  "otpButton":{
+    "locator":"//button[text()='SUBMIT']",
+    "by":"xpath"
+  }
+}
