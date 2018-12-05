@@ -5,6 +5,7 @@ from PageObject.Pages.loginPage import Login
 @pytest.mark.usefixtures("setup")
 class TestLoginForm:
 
+    @pytest.mark.skip(reason="no way of currently testing this")
     def test_valid_login(self):
         driver = self.driver
         run = MakeAction(driver)

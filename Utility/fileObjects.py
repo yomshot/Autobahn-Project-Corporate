@@ -18,8 +18,8 @@ class MyLocator():
                    "landingComponent.json"
 
             with open(path, encoding='utf-8') as s:
-                landingComponent = json.loads(s.read())
-            return landingComponent
+                lc = json.loads(s.read())
+            return lc
         except:
             return print('JSON File not existing')
 
@@ -54,6 +54,17 @@ class MyLocator():
         except:
             return print('JSON File not existing')
 
+    def fundTransferData(self):
+        try:
+            path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\" \
+                   "fundTransferData.json"
+
+            with open(path, encoding='utf-8') as s:
+                ft = json.loads(s.read())
+            return ft
+        except:
+            return print('JSON File not existing')
+
     def fundTransferForm(self):
         try:
             path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\" \
@@ -64,9 +75,6 @@ class MyLocator():
             return ft
         except:
             return print('JSON File not existing')
-
-
-
 
 
 

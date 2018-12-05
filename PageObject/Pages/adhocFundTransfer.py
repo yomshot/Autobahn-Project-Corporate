@@ -6,24 +6,44 @@ class AdhocFundTransfer():
 
         # instance object for MyLocator class
         exe = MyLocator()
-
         ft = exe.fundTransferForm()
 
-        self.sourceAccountLoc = ft['sourceAccount']['locator']
-        self.sourceAccountBy = ft['sourceAccount']['by']
+        ftField = ft['reuseField']
+        ftButton = ft['reuseButton']
+        ftChannel = ft['reuseButton']['channels']
 
-        self.receiverAccountLoc = ft['receiverAccount']['locator']
-        self.receiverAccountBy = ft['receiverAccount']['by']
+        self.btnNewTransactionLoc = ftButton['newTransaction']['locator']
+        self.btnNewTransactionBy = ftButton['newTransaction']['by']
 
-        self.amountLoc = ft['amount']['locator']
-        self.amountBy = ft['amount']['by']
+        self.chUbpLoc = ftChannel['chUbp']['locator']
+        self.chPesonetLoc = ftChannel['chPesonet']['locator']
+        self.chSwiftLoc = ftChannel['chSwift']['locator']
+        self.chPddtsLoc = ftChannel['chPddts']['locator']
 
-        self.remarksLoc = ft['remarks']['locator']
-        self.remarksBy = ft['remarks']['by']
+        self.chUbpBy = ftChannel['chUbp']['by']
+        self.chPesonetBy = ftChannel['chPesonet']['by']
+        self.chSwiftBy = ftChannel['chSwift']['by']
+        self.chPddtsBy = ftChannel['chPddts']['by']
 
-        self.nextButtonLoc = ft['submitToConfirmation']['locator']
-        self.nextButtonBy = ft['submitToConfirmation']['by']
+        self.sourceAccountLoc = ftField['sourceAccount']['locator']
+        self.sourceAccountBy = ftField['sourceAccount']['by']
 
-        self.submitButtonLoc = ft['submitToSummary']['locator']
-        self.submitButtonBy = ft['submitToSummary']['by']
+        self.nextButtonLoc = ftButton['submitToConfirmation']['locator']
+        self.nextButtonBy = ftButton['submitToConfirmation']['by']
+
+        self.selSourceAccountLoc = ftField['selectSource']['locator']
+        self.selSourceAccountBy = ftField['selectSource']['by']
+
+        self.receiverAccountLoc = ftField['receiverAccount']['locator']
+        self.receiverAccountBy = ftField['receiverAccount']['by']
+
+        self.amountLoc = ftField['amount']['locator']
+        self.amountBy = ftField['amount']['by']
+
+        self.remarksLoc = ftField['remarks']['locator']
+        self.remarksBy = ftField['remarks']['by']
+
+
+
+
 

@@ -1,11 +1,25 @@
 {
-  "ubp":{
-    "sourceAccount":["GLOBE TELECOM GMCR INC.", "UPASS CA001 TEST ACCOUNT", "UPASS CA001 TEST ACCOUNT",
-                                       "GOLDEN ARCHES DEVELOPMENT CORPORATION"],
-    "amount":"5.00",
-    "remarks":"Test Run "
-  },
-  "pesonet":{
-    "test": null
+  "sourceAccounts":[
+    "GLOBE TELECOM GMCR INC.", "UPASS CA001 TEST ACCOUNT", "UPASS CA001 TEST ACCOUNT",
+    "GOLDEN ARCHES DEVELOPMENT CORPORATION", "HIDROMAC PHILIPPINES INCORPORATED", "MIGUEL M FERMIN"
+  ],
+  "banks":[
+    "sample bank","sample bank"
+  ],
+  "channels":{
+    "ftUbp":{
+      "amount":"5.00",
+      "remarks":"Test Run "
+    },
+    "ftPesonet":{
+      "test": null
+    },
+    "ftPddts":{
+      "test": null
+    },
+    "ftSwift":{
+      "test": null
+    }
   }
+
 }

@@ -15,11 +15,33 @@
     "submitToSummary":{
       "locator":"//button[text()='Submit'",
       "by":"xpath"
+    },
+    "channels":{
+      "chUbp":{
+        "locator":"//h6[contains(text(), 'Another Union Bank Account')]",
+        "by":"xpath"
+      },
+      "chPesonet":{
+        "locator":"//h6[contains(text(), 'PesoNet')]",
+        "by":"xpath"
+      },
+      "chPddts":{
+        "locator":"//h6[contains(text(), 'PDDTS (Philippine Domestic Dollar Transfer System)')]",
+        "by":"xpath"
+      },
+      "chSwift":{
+        "locator":"//h6[contains(text(), 'SWIFT (Society for Worldwide Interbank Financial Telecommunication)')]",
+        "by":"xpath"
+      }
     }
   },
   "reuseField":{
     "sourceAccount":{
       "locator":"//small[text()='Select the Unionbank account you want to transfer from.']",
+      "by":"xpath"
+    },
+    "selectSource":{
+      "locator":"//span[@class='fs-16 text-white fw-500']",
       "by":"xpath"
     },
     "receiverAccount":{

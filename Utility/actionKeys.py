@@ -70,3 +70,31 @@ class MakeAction(object):
             return True
         else:
             return False
+
+    def find_item_in_elements_and_get(self, by:str, locator: str, wait: int, selectItem: str):
+        by = helper.method_by(by)
+
+        try:
+            element = WebDriverWait(self.driver, int(wait)).until(
+                EC.visibility_of_all_elements_located((by, locator))  # this is explicitly wait in selenium
+            )
+            for i in element:
+                if i.text == selectItem:
+                    i.click()
+                    print("{} is selected".format(selectItem))
+                    return True
+                else:
+                    return False
+
+        except (NoSuchElementException, WebDriverException, TimeoutException):
+            print("Find_Elements {0} has reached Timeout Exception".format(locator))
+            return None
+
+
+
+
+
+
+
+
+
