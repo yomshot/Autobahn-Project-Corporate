@@ -31,17 +31,21 @@ class AdhocFundTransfer():
         self.nextButtonLoc = ftButton['submitToConfirmation']['locator']
         self.nextButtonBy = ftButton['submitToConfirmation']['by']
 
-        self.selSourceAccountLoc = ftField['selectSource']['locator']
-        self.selSourceAccountBy = ftField['selectSource']['by']
-
         self.receiverAccountLoc = ftField['receiverAccount']['locator']
         self.receiverAccountBy = ftField['receiverAccount']['by']
+
+        self.submitLoc = ftButton['submitToSummary']['locator']
+        self.submitBy = ftButton['submitToSummary']['by']
+
+        self.selSourceAccountLoc = ftField['selectSource']['locator']
+        self.selSourceAccountBy = ftField['selectSource']['by']
 
         self.amountLoc = ftField['amount']['locator']
         self.amountBy = ftField['amount']['by']
 
         self.remarksLoc = ftField['remarks']['locator']
         self.remarksBy = ftField['remarks']['by']
+
 
 
 

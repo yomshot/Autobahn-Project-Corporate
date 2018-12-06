@@ -13,7 +13,7 @@
       "by":"xpath"
     },
     "submitToSummary":{
-      "locator":"//button[text()='Submit'",
+      "locator":"//button[text()='Submit']",
       "by":"xpath"
     },
     "channels":{

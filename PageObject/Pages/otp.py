@@ -1,6 +1,6 @@
 from Utility.fileObjects import MyLocator
 
-class AdhocFundTransfer():
+class MyOTP():
 
     def __init__(self):
 

@@ -88,7 +88,7 @@ class MakeAction(object):
 
         except (NoSuchElementException, WebDriverException, TimeoutException):
             print("Find_Elements {0} has reached Timeout Exception".format(locator))
-            return None
+
 
 
 

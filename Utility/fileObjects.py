@@ -56,8 +56,7 @@ class MyLocator():
 
     def fundTransferData(self):
         try:
-            path = "C:\\Users\\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\" \
-                   "fundTransferData.json"
+            path = "C:\\Users\cheqws115-user\\PycharmProjects\\Autobahn-Project\\PageObject\\Locators\\TestData\\fundTransferData.json"
 
             with open(path, encoding='utf-8') as s:
                 ft = json.loads(s.read())

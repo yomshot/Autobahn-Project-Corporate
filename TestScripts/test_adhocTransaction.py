@@ -3,11 +3,16 @@ from Utility.actionKeys import MakeAction
 from PageObject.Pages.loginPage import Login
 from PageObject.Pages.adhocFundTransfer import AdhocFundTransfer
 from PageObject.Pages.landingPage import LandingComponents
+from PageObject.Pages.otp import MyOTP
 from Utility.testData import AdhocFundTransferData
+import datetime
+
 
 @pytest.mark.usefixtures("setup")
 class TestLoginForm:
     wait = 4
+    timeAndDate = datetime.datetime.now().strftime("%m-%d-%y %H:%M")
+    dateAndTimeToday = str(timeAndDate)
 
     def test_login(self):
         driver = self.driver
@@ -43,6 +48,7 @@ class TestLoginForm:
         run = MakeAction(driver)
         ft = AdhocFundTransfer()
         dt = AdhocFundTransferData()
+        otp = MyOTP()
 
         num_of_accounts = dt.sourceAccountLen
         select_account = dt.sourceAccount
@@ -51,5 +57,24 @@ class TestLoginForm:
         run.click_element(ft.sourceAccountBy, ft.sourceAccountLoc)
 
         for i in range(num_of_accounts):
-            run.find_item_in_elements_and_get(ft.selSourceAccountBy, ft.selSourceAccountLoc, self.wait, select_account[i])
+            source = run.find_item_in_elements_and_get(ft.selSourceAccountBy, ft.selSourceAccountLoc, self.wait, select_account[i])
+            if source:
+                break
 
+        run.find_elements(ft.receiverAccountBy, ft.receiverAccountLoc)  # find password field
+        run.find_element_and_input(ft.receiverAccountBy, ft.receiverAccountLoc, self.wait, dt.phpTargetAccount)
+
+        run.find_elements(ft.amountBy, ft.amountLoc)  # find password field
+        run.find_element_and_input(ft.amountBy, ft.amountLoc, self.wait, dt.amount)
+
+        run.find_elements(ft.remarksBy, ft.remarksLoc)  # find password field
+        run.find_element_and_input(ft.remarksBy, ft.remarksLoc, self.wait, dt.remarks)
+
+        run.click_element(ft.btnNewTransactionBy, ft.btnNewTransactionLoc)
+
+        run.find_elements(otp.otpBy, otp.otpLoc)  # find password field
+        run.find_element_and_input(otp.otpBy, otp.otpLoc, self.wait, otp.otpCode)
+
+        run.click_element(otp.otpButtonBy, otp.otpButtonLoc)
+
+        run.click_element(ft.submitBy, ft.submitLoc)
