@@ -12,6 +12,9 @@ class AdhocFundTransfer():
         ftButton = ft['reuseButton']
         ftChannel = ft['reuseButton']['channels']
 
+        self.formOverlayLoc = ft['reuseOverlay']['locator']
+        self.formOverlayBy = ft['reuseOverlay']['by']
+
         self.btnNewTransactionLoc = ftButton['newTransaction']['locator']
         self.btnNewTransactionBy = ftButton['newTransaction']['by']
 
@@ -39,6 +42,9 @@ class AdhocFundTransfer():
 
         self.selSourceAccountLoc = ftField['selectSource']['locator']
         self.selSourceAccountBy = ftField['selectSource']['by']
+
+        self.makeAnotherTransferLoc = ftButton['makeAnotherTransfer']['locator']
+        self.makeAnotherTransferBy = ftButton['makeAnotherTransfer']['by']
 
         self.amountLoc = ftField['amount']['locator']
         self.amountBy = ftField['amount']['by']

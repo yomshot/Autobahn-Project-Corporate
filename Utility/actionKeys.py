@@ -26,7 +26,7 @@ class MakeAction(object):
             print("Element {0} Not Found".format(locator))
             return False
 
-    def wait_until_element_not_visible(self, by, locator, wait=3):
+    def wait_until_element_not_visible(self, by, locator, wait=5):
         by = helper.method_by(by) # check the method of finding the location
         try:
             element = WebDriverWait(self.driver, wait).until(
@@ -38,7 +38,7 @@ class MakeAction(object):
             print(e)
             return False
 
-    def click_element(self, by, locator, wait=5):
+    def click_element(self, by, locator, wait=7):
         by = helper.method_by(by) # check the method of finding the location
         try:
             element = WebDriverWait(self.driver, wait).until(
@@ -47,11 +47,11 @@ class MakeAction(object):
             element.click()
             print('Click Element {0}'.format(locator))
             return True
-        except (NoSuchElementException, WebDriverException, TimeoutException):
-            print('Click Element %s is fail' % locator)
+        except (NoSuchElementException, WebDriverException, TimeoutException) as e:
+            print('Element not found {0} '.format(locator)+str(e))
             return False
 
-    def find_elements(self, by: str, locator: str, wait=4):
+    def find_elements(self, by: str, locator: str, wait=7):
         by = helper.method_by(by) # check the method of finding the location
         try:
             element = WebDriverWait(self.driver, int(wait)).until(
@@ -71,7 +71,7 @@ class MakeAction(object):
         else:
             return False
 
-    def find_item_in_elements_and_get(self, by:str, locator: str, wait: int, selectItem: str):
+    def find_item_in_elements_and_click(self, by:str, locator: str, wait: int, selectItem: str):
         by = helper.method_by(by)
 
         try:
@@ -84,11 +84,10 @@ class MakeAction(object):
                     print("{} is selected".format(selectItem))
                     return True
                 else:
-                    return False
+                    print("Not found")
 
         except (NoSuchElementException, WebDriverException, TimeoutException):
             print("Find_Elements {0} has reached Timeout Exception".format(locator))
-
 
 
 

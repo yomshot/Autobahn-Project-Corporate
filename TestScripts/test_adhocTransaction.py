@@ -6,11 +6,13 @@ from PageObject.Pages.landingPage import LandingComponents
 from PageObject.Pages.otp import MyOTP
 from Utility.testData import AdhocFundTransferData
 import datetime
+import time
 
 
 @pytest.mark.usefixtures("setup")
 class TestLoginForm:
-    wait = 4
+    wait = 7
+    organization = "DEMO ACCOUNT 11-23 16:29"
     timeAndDate = datetime.datetime.now().strftime("%m-%d-%y %H:%M")
     dateAndTimeToday = str(timeAndDate)
 
@@ -36,8 +38,8 @@ class TestLoginForm:
 
         run.click_element(lc.orgIconBy, lc.orgIconLoc) # click the circle for org selection
 
-        run.find_item_in_elements_and_get(lc.orgSelectionBy, lc.orgSelectionLoc, self.wait, "Test Org 11-21 16:57")
-
+        run.find_item_in_elements_and_click(lc.orgSelectionBy, lc.orgSelectionLoc, self.wait, self.organization)
+        time.sleep(2)
         run.click_element(lc.ftButtonBy, lc.ftButtonLoc) # going to fund transfer
 
         run.click_element(ft.btnNewTransactionBy, ft.btnNewTransactionLoc) # new transaction
@@ -50,19 +52,26 @@ class TestLoginForm:
         dt = AdhocFundTransferData()
         otp = MyOTP()
 
-        num_of_accounts = dt.sourceAccountLen
-        select_account = dt.sourceAccount
+        num_of_accounts = dt.phpSourceAccountLen
+        select_account = dt.phpSourceAccount
+
+        num_of_target = dt.phpTargetAccountLen
+        select_target = dt.phpTargetAccount
 
         run.click_element(ft.chUbpBy, ft.chUbpLoc)
         run.click_element(ft.sourceAccountBy, ft.sourceAccountLoc)
 
         for i in range(num_of_accounts):
-            source = run.find_item_in_elements_and_get(ft.selSourceAccountBy, ft.selSourceAccountLoc, self.wait, select_account[i])
+            source = run.find_item_in_elements_and_click(ft.selSourceAccountBy, ft.selSourceAccountLoc, self.wait, select_account[i])
             if source:
                 break
 
-        run.find_elements(ft.receiverAccountBy, ft.receiverAccountLoc)  # find password field
-        run.find_element_and_input(ft.receiverAccountBy, ft.receiverAccountLoc, self.wait, dt.phpTargetAccount)
+        run.find_elements(ft.receiverAccountBy, ft.receiverAccountLoc)
+
+        for i in range(num_of_target):
+            target = run.find_element_and_input(ft.receiverAccountBy, ft.receiverAccountLoc, self.wait, select_target[i])
+            if target:
+                break
 
         run.find_elements(ft.amountBy, ft.amountLoc)  # find password field
         run.find_element_and_input(ft.amountBy, ft.amountLoc, self.wait, dt.amount)
@@ -70,11 +79,20 @@ class TestLoginForm:
         run.find_elements(ft.remarksBy, ft.remarksLoc)  # find password field
         run.find_element_and_input(ft.remarksBy, ft.remarksLoc, self.wait, dt.remarks)
 
-        run.click_element(ft.btnNewTransactionBy, ft.btnNewTransactionLoc)
+        run.click_element(ft.nextButtonBy, ft.nextButtonLoc)
 
-        run.find_elements(otp.otpBy, otp.otpLoc)  # find password field
-        run.find_element_and_input(otp.otpBy, otp.otpLoc, self.wait, otp.otpCode)
+        time.sleep(3)
+        overlay = run.wait_until_element_visible(ft.formOverlayBy, ft.formOverlayLoc)
 
-        run.click_element(otp.otpButtonBy, otp.otpButtonLoc)
+        while overlay:
+            print("displaying")
+            pass
+        else:
+            run.click_element(ft.submitBy, ft.submitLoc)
 
-        run.click_element(ft.submitBy, ft.submitLoc)
+        run.find_elements(otp.otpBy, otp.otpLoc)  # find otp field
+        run.find_element_and_input(otp.otpBy, otp.otpLoc, self.wait, otp.otpCode)  # enter otp by default
+
+        run.click_element(otp.otpButtonBy, otp.otpButtonLoc)  # click otp submit button
+        time.sleep(2)
+        run.click_element(ft.makeAnotherTransferBy, ft.makeAnotherTransferLoc)

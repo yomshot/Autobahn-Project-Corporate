@@ -10,8 +10,8 @@ class AdhocFundTransferData():
         dt = exe.fundTransferData()
         ch = dt['channels']
 
-        self.sourceAccount = dt['sourceAccounts']
-        self.sourceAccountLen = len(self.sourceAccount)
+        self.phpSourceAccount = dt['phpSourceAccounts']
+        self.phpSourceAccountLen = len(self.phpSourceAccount)
 
         self.phpTargetAccount = dt['phpTargetAccounts']
         self.phpTargetAccountLen = len(self.phpTargetAccount)

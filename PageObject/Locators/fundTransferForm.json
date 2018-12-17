@@ -16,6 +16,10 @@
       "locator":"//button[text()='Submit']",
       "by":"xpath"
     },
+    "makeAnotherTransfer":{
+      "locator":"//button[text()='Make Another Transfer']",
+      "by":"xpath"
+    },
     "channels":{
       "chUbp":{
         "locator":"//h6[contains(text(), 'Another Union Bank Account')]",
@@ -53,7 +57,7 @@
       "by":"xpath"
     },
     "remarks":{
-      "locator":"//input[@name='remarks']",
+      "locator":"//textarea[@name='remarks']",
       "by":"xpath"
     }
   },
@@ -78,6 +82,10 @@
       "locator":"//span[text()='COMPUTER AND INFORMATION SERVICES']",
       "by":"xpath"
     }
+  },
+  "reuseOverlay": {
+    "locator":"//div[class()='loaderOverlay_2CRZ']",
+    "by":"xpath"
   }
 }
 
