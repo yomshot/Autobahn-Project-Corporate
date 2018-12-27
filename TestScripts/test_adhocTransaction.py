@@ -28,7 +28,6 @@ class TestLoginForm:
         run.click_element(my.loginButtonBy, my.loginButtonLoc)  # click button to submit
 
         run.find_element_and_input(my.otpBy, my.otpLoc, self.wait, my.otpCode)  # enter otp by default
-
         run.click_element(my.otpButtonBy, my.otpButtonLoc)  # click otp submit button
 
         run.click_element(lc.orgIconBy, lc.orgIconLoc) # click the circle for org selection
