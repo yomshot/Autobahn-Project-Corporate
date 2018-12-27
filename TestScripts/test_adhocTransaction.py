@@ -23,15 +23,10 @@ class TestLoginForm:
         ft = AdhocFundTransfer()
         my = Login()
 
-        run.find_elements(my.usernameBy, my.usernameLoc)  # find username field
         run.find_element_and_input(my.usernameBy, my.usernameLoc, self.wait, my.username)  # enter valid username
-
-        run.find_elements(my.passwordBy, my.passwordLoc)  # find password field
         run.find_element_and_input(my.passwordBy, my.passwordLoc, self.wait, my.password)  # enter valid password
-
         run.click_element(my.loginButtonBy, my.loginButtonLoc)  # click button to submit
 
-        run.find_elements(my.otpBy, my.otpLoc)  # find otp field
         run.find_element_and_input(my.otpBy, my.otpLoc, self.wait, my.otpCode)  # enter otp by default
 
         run.click_element(my.otpButtonBy, my.otpButtonLoc)  # click otp submit button
@@ -73,10 +68,8 @@ class TestLoginForm:
             if target:
                 break
 
-        run.find_elements(ft.amountBy, ft.amountLoc)  # find password field
         run.find_element_and_input(ft.amountBy, ft.amountLoc, self.wait, dt.amount)
 
-        run.find_elements(ft.remarksBy, ft.remarksLoc)  # find password field
         run.find_element_and_input(ft.remarksBy, ft.remarksLoc, self.wait, dt.remarks)
 
         run.click_element(ft.nextButtonBy, ft.nextButtonLoc)
@@ -90,7 +83,6 @@ class TestLoginForm:
         else:
             run.click_element(ft.submitBy, ft.submitLoc)
 
-        run.find_elements(otp.otpBy, otp.otpLoc)  # find otp field
         run.find_element_and_input(otp.otpBy, otp.otpLoc, self.wait, otp.otpCode)  # enter otp by default
 
         run.click_element(otp.otpButtonBy, otp.otpButtonLoc)  # click otp submit button
